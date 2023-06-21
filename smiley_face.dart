@@ -4,7 +4,19 @@ int countSmileys(List<String> arr) {
 }
 
 void main(){
-  List<String> smilefaces=[':-)',';~D',':-D',':_D'];
+  List<String> faces=[':-)',';~D',':-D',':_D'];
+  List<List<String>> smilefaces=[[':',';'],['-','~'],[')','D']];
+  
+  List<List<String>> charactersfromfaces=[];
+
+  for(var i=0; i<faces.length; i++){
+    charactersfromfaces.add(faces[i].split(''));
+    
+  }
+  print(charactersfromfaces);
+  print(smilefaces);
+
+
 }
 
 
