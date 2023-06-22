@@ -13,6 +13,4 @@ bool isPalindrome(String x) {
 void main(){
   String w="12/21/33 12:21";
   isPalindrome(w)?print("The word is equal to its inverse"):print("The word is not equal to its inverse");
-    
-  
 }
