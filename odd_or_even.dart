@@ -16,5 +16,5 @@ String oddOrEven(List<int> array) {
 
 void main(){
   List<int> nums=[17, 21, 99];
-  print(oddOrEven([]));
+  print(oddOrEven(nums));
 }
