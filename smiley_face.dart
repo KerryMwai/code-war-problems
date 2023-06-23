@@ -13,7 +13,7 @@ void main(){
   for(var i=0; i<faces.length; i++){
     for(var j=0; j<smilefaces.length; j++){
       if(faces[i]==smilefaces[j]){
-        smilefacesfromgivenfaces.add(smilefaces[i]);
+        smilefacesfromgivenfaces.add(faces[i]);
       }
     }
   }
