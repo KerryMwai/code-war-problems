@@ -45,9 +45,8 @@ String getOrder(String input) {
   }
 
 List<String> order=separated.where((item) => menu.contains(item)).toList();
-Set filtered=Set();
-order.forEach((element) => filtered.add(element),);
-print(filtered.toList());
+
+print(order);
 
 // List<String> itemsf=[];
 // for(var i=0; i<separated.length; i++){
