@@ -1,11 +1,62 @@
 String getOrder(String input) {
   List<String> menu=['Burger','Fries','Chicken','Pizza','Sandwich','Onionrings','Milkshake','Coke'];
+  List<String> splitted=input.split('');
+  List<String> separated=[];
+  for(var i=0; i<splitted.length; i++){
+    switch(splitted[i]){
+      case 'b':
+        String item=input.substring(i,i+6);
+        String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
+        separated.add(withfirstletterCapitalized);
+        break;
+        case 'f':
+          String item=input.substring(i,i+5);
+          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
+        separated.add(withfirstletterCapitalized);
+          break;
+        case 'c':
+          String item=input.substring(i,i+7);
+          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
+        separated.add(withfirstletterCapitalized);
+          break;
+        case 'p':
+         String item=input.substring(i,i+5);
+          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
+        separated.add(withfirstletterCapitalized);
+          break;
+        case 's':
+           String item=input.substring(i,i+8);
+          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
+        separated.add(withfirstletterCapitalized);
+          break;
+        case 'o':
+         String item=input.substring(i,i+10);
+          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
+        separated.add(withfirstletterCapitalized);
+          break;
+        case 'm':
+          String item=input.substring(i,i+9);
+          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
+          separated.add(withfirstletterCapitalized);
+          break;
+    }
+  }
+
+List<String> itemsf=[];
+for(var i=0; i<separated.length; i++){
+  if(menu.contains(separated[i])){
+    if(itemsf.contains(separated[i]))continue;
+    itemsf.add(separated[i]);
+  }
+}
+print(itemsf);
 
   return "";
 }
 
 void main(){
-
+String menuordered="milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza";
+getOrder(menuordered);
 
 }
 
