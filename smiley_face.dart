@@ -10,9 +10,11 @@ void main(){
   
   List<String> smilefacesfromgivenfaces=[];
 
-  for(var i=0; i<smilefaces.length; i++){
-    if(faces.contains(smilefaces[i])){
+  for(var i=0; i<faces.length; i++){
+    for(var j=0; j<smilefaces.length; j++){
+      if(faces[i]==smilefaces[j]){
         smilefacesfromgivenfaces.add(smilefaces[i]);
+      }
     }
   }
 
