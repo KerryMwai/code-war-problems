@@ -1,4 +1,8 @@
-
+  categories(String input,List<String> items, int i, int n){
+        String item=input.substring(i,n);
+        String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
+        items.add(withfirstletterCapitalized);
+  }
 
 String getOrder(String input) {
   List<String> menu=['Burger','Fries','Chicken','Pizza','Sandwich','Onionrings','Milkshake','Coke'];
@@ -7,45 +11,33 @@ String getOrder(String input) {
   for(var i=0; i<splitted.length; i++){
     switch(splitted[i]){
       case 'b':
-        String item=input.substring(i,i+6);
-        String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
-        separated.add(withfirstletterCapitalized);
+        categories(input, separated, i, i+6);
         break;
         case 'f':
-          String item=input.substring(i,i+5);
-          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
-        separated.add(withfirstletterCapitalized);
+        categories(input, separated, i, i+5);
           break;
         case 'c':
-          String item=input.substring(i,i+7);
-          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
-        separated.add(withfirstletterCapitalized);
+        categories(input, separated, i, i+7);
           break;
         case 'p':
-         String item=input.substring(i,i+5);
-          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
-        separated.add(withfirstletterCapitalized);
+        categories(input, separated, i, i+5);
           break;
         case 's':
-           String item=input.substring(i,i+8);
-          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
-        separated.add(withfirstletterCapitalized);
+        categories(input, separated, i, i+8);
           break;
         case 'o':
-         String item=input.substring(i,i+10);
-          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
-        separated.add(withfirstletterCapitalized);
+        categories(input, separated, i, i+10);
           break;
         case 'm':
-          String item=input.substring(i,i+9);
-          String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
-          separated.add(withfirstletterCapitalized);
+        categories(input, separated, i, i+9);
           break;
     }
   }
 
 List<String> order=separated.where((item) => menu.contains(item)).toList();
+for(var i=0; i<menu.length; i++){
 
+}
 print(order);
 
 // List<String> itemsf=[];
