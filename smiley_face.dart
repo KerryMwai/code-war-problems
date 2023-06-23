@@ -1,7 +1,4 @@
-int countSmileys(List<String> arr) {
-  // your code here
-  return 0;
-}
+int countSmileys(List<String> arr) => arr.isEmpty ? 0 : arr.where((x) => x.contains(new RegExp(r'[:;][\-~]?[)D]'))).length;
 
 void main(){
 
@@ -18,7 +15,9 @@ void main(){
     }
   }
 
-  print(smilefacesfromgivenfaces.length);
+  print("The number of smile face using the long way: ${smilefacesfromgivenfaces.length}"); //Using the longest way
+  print("The number of smiling faces using the short way: ${countSmileys(faces)}"); //Using the shortest createive way
+  
 
 }
 
