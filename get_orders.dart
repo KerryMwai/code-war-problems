@@ -1,3 +1,5 @@
+
+
 String getOrder(String input) {
   List<String> menu=['Burger','Fries','Chicken','Pizza','Sandwich','Onionrings','Milkshake','Coke'];
   List<String> splitted=input.split('');
@@ -42,14 +44,17 @@ String getOrder(String input) {
     }
   }
 
-List<String> itemsf=[];
-for(var i=0; i<separated.length; i++){
-  if(menu.contains(separated[i])){
-    if(itemsf.contains(separated[i]))continue;
-    itemsf.add(separated[i]);
-  }
-}
-print(itemsf);
+List<String> order=separated.where((item) => menu.contains(item)).toList();
+print(order);
+
+// List<String> itemsf=[];
+// for(var i=0; i<separated.length; i++){
+//   if(menu.contains(separated[i])){
+//     if(itemsf.contains(separated[i]))continue;
+//     itemsf.add(separated[i]);
+//   }
+// }
+// print(itemsf);
 
   return "";
 }
