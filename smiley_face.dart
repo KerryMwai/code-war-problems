@@ -5,33 +5,20 @@ int countSmileys(List<String> arr) {
 
 void main(){
 
-  List<String> faces=[':)',':(',':D',':O',':;'];
-  List<List<String>> smilefaces=[[':',';'],['-','~'],[')','D']];
+  List<String> faces=[';D', ':-(', ':-)', ';~)'];
+  List<String> smilefaces=[':)',':D',';)',';D',  ':-)',':-D',';-)',';-D',':~)',':~D',';~)',';~D'];
   
-  List<List<String>> charactersfromfaces=[];
-  List<List<String>> smilefacesfromgivenfaces=[];
+  List<String> smilefacesfromgivenfaces=[];
 
-  for(var i=0; i<faces.length; i++){
-    charactersfromfaces.add(faces[i].split('')); 
+  for(var i=0; i<smilefaces.length; i++){
+    if(faces.contains(smilefaces[i])){
+        smilefacesfromgivenfaces.add(smilefaces[i]);
+    }
   }
-  int count=0;
-  // for(var i=0; i<charactersfromfaces.length; i++){
-  //   for(var j=0; j<charactersfromfaces[i].length; j++){
-  //       for(var k=0; k<smilefaces.length; k++){
-  //         if(!smilefaces[k].contains(charactersfromfaces[i][j])){
-  //           break;
-  //         }else{
-  //           count++;
-  //         }
-  //       }
-  //   }
-  // }
-print(count);
+
+  print(smilefacesfromgivenfaces.length);
 
 }
-
-
-
 
 
 // Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
