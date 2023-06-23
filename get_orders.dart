@@ -1,4 +1,6 @@
-  categories(String input,List<String> items, int i, int n){
+ 
+// New Cashier Does Not Know About Space or Shift
+ void categories(String input,List<String> items, int i, int n){
         String item=input.substring(i,n);
         String withfirstletterCapitalized=item.substring(0,1).toUpperCase()+item.substring(1);
         items.add(withfirstletterCapitalized);
@@ -9,52 +11,50 @@ String getOrder(String input) {
   List<String> splitted=input.split('');
   List<String> separated=[];
   for(var i=0; i<splitted.length; i++){
-    switch(splitted[i]){
-      case 'b':
+     String word=splitted[i]+splitted[i+1];
+    switch(word){
+      case 'bu':
         categories(input, separated, i, i+6);
         break;
-        case 'f':
+        case 'fr':
         categories(input, separated, i, i+5);
           break;
-        case 'c':
+        case 'ch':
         categories(input, separated, i, i+7);
           break;
-        case 'p':
+        case 'co':
+        categories(input, separated, i, i+4);
+          break;
+        case 'pi':
         categories(input, separated, i, i+5);
           break;
-        case 's':
+        case 'sa':
         categories(input, separated, i, i+8);
           break;
-        case 'o':
+        case 'on':
         categories(input, separated, i, i+10);
           break;
-        case 'm':
+        case 'mi':
         categories(input, separated, i, i+9);
           break;
     }
+    if(i==splitted.length-3) break;
   }
 
 List<String> order=separated.where((item) => menu.contains(item)).toList();
-for(var i=0; i<menu.length; i++){
-
-}
-print(order);
-
-// List<String> itemsf=[];
-// for(var i=0; i<separated.length; i++){
-//   if(menu.contains(separated[i])){
-//     if(itemsf.contains(separated[i]))continue;
-//     itemsf.add(separated[i]);
-//   }
-// }
-// print(itemsf);
-
-  return "";
+List itemsOrdered=[];
+menu.forEach((e) { 
+  List<String> items=order.where((element) => e==element).toList();
+  if(!items.isEmpty){
+    itemsOrdered.add(items.join(' '));
+  }
+});
+  return itemsOrdered.join(' ').replaceAll('  ', ' ');
 }
 
 void main(){
 String menuordered="milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza";
-getOrder(menuordered);
+print(getOrder(menuordered));
 
 }
 
