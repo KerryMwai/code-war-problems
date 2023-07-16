@@ -1,25 +1,41 @@
-int countSmileys(List<String> arr) => arr.isEmpty ? 0 : arr.where((x) => x.contains(new RegExp(r'[:;][\-~]?[)D]'))).length;
-
+// int countSmileys(List<String> arr) {
+//   // your code here
+//   return 0;
+// }
+int countSmileys(List<String> arr) {
+  final arrChar = arr.join("");
+  final regex = RegExp(r"[:;][-~]?[)D]");
+  return regex.allMatches(arrChar).length;
+}
 void main(){
 
-  List<String> faces=[';D', ':-(', ':-)', ';~)'];
-  List<String> smilefaces=[':)',':D',';)',';D',  ':-)',':-D',';-)',';-D',':~)',':~D',';~)',';~D'];
+  List<String> faces=[':)',':(',':D',':O',':;'];
+  // List<List<String>> smilefaces=[[':',';'],['-','~'],[')','D']];
   
-  List<String> smilefacesfromgivenfaces=[];
+  List<List<String>> charactersfromfaces=[];
+  // List<List<String>> smilefacesfromgivenfaces=[];
 
   for(var i=0; i<faces.length; i++){
-    for(var j=0; j<smilefaces.length; j++){
-      if(faces[i]==smilefaces[j]){
-        smilefacesfromgivenfaces.add(faces[i]);
-      }
-    }
+    charactersfromfaces.add(faces[i].split('')); 
   }
-
-  print("The number of smile face using the long way: ${smilefacesfromgivenfaces.length}"); //Using the longest way
-  print("The number of smiling faces using the short way: ${countSmileys(faces)}"); //Using the shortest createive way
-  
+  int count=0;
+  // for(var i=0; i<charactersfromfaces.length; i++){
+  //   for(var j=0; j<charactersfromfaces[i].length; j++){
+  //       for(var k=0; k<smilefaces.length; k++){
+  //         if(!smilefaces[k].contains(charactersfromfaces[i][j])){
+  //           break;
+  //         }else{
+  //           count++;
+  //         }
+  //       }
+  //   }
+  // }
+print(count);
 
 }
+
+
+
 
 
 // Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
