@@ -1,6 +1,7 @@
 
 
-  String capitalizeFirstLetter(String word){
+
+String capitalizeFirstLetter(String word){
     List<String> wordelemnts=word.split(" ");
     List<String> capitalizedfirstletter=[];
     wordelemnts.forEach((element) {
@@ -9,20 +10,21 @@
     return capitalizedfirstletter.join(" ");
   }
 void main(){
-  final Map<String, String>feed_types={
-  "CHICKEN_DUCK_MASH":"Chick & Duck Mash",
-  "GROWERS_MASH":"Growers Mash",
-  "LAYERS_MASH":"Layers Mash",
-  "KIENYEJI_GROWERS_MASH":"Kienyeji Growers Mash",
-  "STARTER_CRUMBS":"Starter Crumbs",
-  "FINISHER_PELLETS":"Finisher Pellets"
-};
+//   final Map<String, String>feed_types={
+//   "CHICKEN_DUCK_MASH":"Chick & Duck Mash",
+//   "GROWERS_MASH":"Growers Mash",
+//   "LAYERS_MASH":"Layers Mash",
+//   "KIENYEJI_GROWERS_MASH":"Kienyeji Growers Mash",
+//   "STARTER_CRUMBS":"Starter Crumbs",
+//   "FINISHER_PELLETS":"Finisher Pellets"
+// };
+;
 
 // final List<String> humanize=feed_types.entries.map((e) => e.value).toList();
 // final List<String> machinelize=feed_types.entries.map((e) => e.key).toList();
-  List<String> feeds = [];
-  List<String> list1=['FINISHER_PELLETS','LAYERS_MASH'];
-  List<String> list2=["Chick & Duck Mash","Growers Mash","Layers Mash"];  
+  // List<String> feeds = [];
+  // List<String> list1=['FINISHER_PELLETS','LAYERS_MASH'];
+  // List<String> list2=["Chick & Duck Mash","Growers Mash","Layers Mash"];  
   // controller.layersFeeds[0].contains(" ")?controller.layersFeeds:controller.layersFeeds.map((key) => feed_types[key]).toList();
   
   String name="HELLO";
